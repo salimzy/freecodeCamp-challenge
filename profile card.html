@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>profile card</title>
+  <style type="text/css" media="all">
+  body{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  }
+    main{
+    background: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height:100vh;
+    
+    }
+    .container{
+    background: darkblue;
+    padding: 30px;
+    height: 400px;
+    width:50%;
+    
+    border-radius:20px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-item:center;
+    
+    }
+    .flex{
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    }
+    img{
+    width: 100px;
+    border-radius: 50%;
+    }
+    .flex span{
+    padding: 10px;
+    background: green;
+    border-radius: 10px;
+    }
+    .flex :nth-child(1){
+    background: royalblue;
+    }
+    .flex :nth-child(2){
+    background: blue;
+    }
+    .blue{
+    background: blue;
+    border-radius: 50%;
+    height: 100px;
+    width:100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    }
+    .card{
+    color: white;
+   
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+  <div class="container">
+    <!--Tab to edit-->
+   
+    <div class="blue">
+    <img src="assets/images/icon-arcade.svg"></div>
+    <div class="card">
+    <h3>code with</h3>
+    <p>front end developer</p>
+    <div class="flex">
+    <span class="primary">follow</span>
+    <span class="secondary">message</span>
+    </div>
+    
+  </div>
+  </main>
+</body>
+
+</html>

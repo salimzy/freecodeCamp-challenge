@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+  <style type="text/css" media="all">
+    *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    
+    }
+    body{
+   
+    }
+    header{
+    padding: 20px;
+    }
+    nav{
+    margin: 10px;
+    }
+    ul{
+    display: flex;
+    gap: 5px;
+    padding: 10px;
+    flex-wrap: wrap;
+    
+    }
+    
+    li{
+   
+    align-items: center;
+    display: flex;
+    
+    justify-content: center;
+    padding: 10px;
+    }
+   nav ul li:hover{
+    border-bottom: 1px solid green;
+    color: green;
+    
+    }
+    h1 span{
+    color: green;
+    }
+    .container{
+    padding: 5px;
+    display: flex;
+    gap: 5px;
+    color: white;
+    }
+    .container .card{
+    padding: 5px;
+    background: darkslategray;
+    height: 100px;
+    width: 200px;
+    border-radius: 10px;
+    
+    
+    }
+    .card:hover{
+    background: darkslateblue;
+    color: white;
+    transition: all ease-in-out 0.3s;
+    }
+    header{
+    display: flex;
+    justify-content: space-between;
+    }
+    .green{
+    color: green;
+    }
+    .circle{
+    border-radius: 50%;
+    padding: 5px;
+    background: transparent;
+    border: 1px solid grey;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   
+    }
+    .flex{
+    display: flex;
+    
+    }.grey{
+    color: lightgrey;
+    }
+    .lightgreen{
+    color: lightgreen;
+    }
+    .red{
+    color: red;
+    }
+    .progress{
+    background: gray;
+    padding: 10px;
+    height:10px;
+    width: 100px;
+    }
+    .yellow{
+    color: yellow;
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <!--Tab to edit-->
+    <header><div> <span></span>
+ <h1>finflow <span>pro</span></h1>
+ <p>freelance cfo dashboard</p>
+    
+    </div>
+     <div><span class="green">• online ready</span>
+     <span></span>
+     </div>
+    </header>
+    <nav>
+     <ul>
+       <li>dashboard</li>
+       
+       <li> transaction
+         <!--Tab to edit-->
+       </li>
+       <li>client
+         <!--Tab to edit-->
+       </li>
+       <li>
+         <!--Tab to edit-->tasks center
+       </li>
+       <li>goals
+         <!--Tab to edit-->
+       </li>
+       <li>Ai advisor
+         <!--Tab to edit-->
+       </li>
+       <li>data and reports
+         <!--Tab to edit-->
+       </li>
+     </ul>
+    </nav>
+    
+    <div class="container">
+    <div class="card">
+    <span>business health score</span>
+    <span class="circle">0</span>
+    <span>critical</span>
+    </div>
+    <div class="card flex"> <div class="grey"><span>total income</span>
+<h2 class="lightgreen">$0.00</h2>
+<p>0 transactions</p></div>
+<div><span>!</span></div>
+    </div>
+    <div class="card">
+    <div class="grey"><span>total Expensis</span>
+<h2 class="red">$0.00</h2>
+<p>0 transactions</p></div>
+<div><span>!</span></div>
+    </div>
+    <div class="card flex">
+    <div class="grey"><span>Net profit</span>
+<h2 class="lightgreen">$0.00</h2>
+<p>0.0% margin</p></div>
+<div><span>!</span></div>
+    
+    ></div>
+    </div>
+    <div class="container">
+    <div class="card">
+    <h3>cash runway</h3>
+    <h2 class="red">0</h2><span>months</span>
+    <p>based on avg monthly expenses</p>
+   <div class="flex"><span>saving buffer</span><span>low</span></div>
+    <span class="progress"></span>
+    </div>
+    <div class="card">
+    <span>tax bucket</span>
+    <h2>$0.00</h2>/<span>/$0.00</span>
+    <p>0% of estimated tax saved </p>
+    <span class="progress"></span>
+    <p>configure your rate in Tax center</p>
+    </div>
+    <div class="card">
+    <div>
+    
+    </div><div>
+    <ul>
+      <li>active client</li>
+      <li>pending invoice</li>
+      <li>overdue invoices </li>
+      <li>tax deductible</li>
+      <li>avg. monthly income</li>
+    </ul>
+    
+    <ul>
+      <li>0</li>
+      <li class="yellow">0</li>
+      <li class="red">0</li>
+      <li class="green">$0.00</li>
+      <li>$0.00</li>
+    </ul>
+    </div>
+    </div>
+    </div>
+  </main>
+</body>
+
+</html>

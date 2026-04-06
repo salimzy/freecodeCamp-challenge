@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Multi-step form</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .attribution { font-size: 0.6875rem; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body>
+<main>
+  <!-- Sidebar start -->
+<section class="content">
+  
+
+  <aside>
+    <ul>
+    <li>
+   <span class="circle">1</span> <div> <span>Step 1</span>
+  Your info</div></li>
+
+ <li> <span class="circle">2</span> <div>Step 2
+Select plan
+ </div>
+</li>
+ <li> <span class="circle">3</span> <div>Step 3
+Add-ons</div></li>
+
+  <li><span class="circle">4</span><div>Step 4
+  Summary</div></li>
+
+    </ul>
+
+
+  </aside>
+  <!-- Sidebar end -->
+  <section class="container">
+    
+
+<section class="step-1">
+  <!-- Step 1 start -->
+
+  <h1>Personal info
+  
+</h1><p>Please provide your name, email address, and phone number.</p>
+
+<div>  <label for="Name">Name</label>
+  
+  <input type="text" name="placeholder=" e.g. Stephen King"id=""></div>
+<div>  <label for="Email Address">Email Address</label>
+  
+  <input type="email" name="" placeholder="e.g. stephenking@lorem.com" id=""></div>
+<div><label for="number">number</label>
+  <input type="phone" name="" id="" value="" placeholder="e.g. +1 234 567 890" />
+  </div>
+
+<div class="buttom"><button class="next-btn">Next Step</button></div>
+
+  <!-- Step 1 end -->
+</section>
+<section class="step-2">
+  <!-- Step 2 start -->
+
+  Select your plan
+  You have the option of monthly or yearly billing.
+
+  Arcade
+  $9/mo
+
+  Advanced
+  $12/mo
+
+  Pro
+  $15/mo
+
+  Monthly
+  Yearly
+
+  Go Back
+  Next Step
+<div class="buttom"><button class="back-btn">Go Back</button>
+<button class="next-btn">Next Step</button></div>
+  <!-- Step 2 end -->
+</section>
+<section class="step-3">
+  <!-- Step 3 start -->
+
+  Pick add-ons
+  Add-ons help enhance your gaming experience.
+
+  Online service
+  Access to multiplayer games
+  +$1/mo
+
+  Larger storage
+  Extra 1TB of cloud save
+  +$2/mo
+
+  Customizable Profile
+  Custom theme on your profile
+  +$2/mo
+
+  Go Back
+  Next Step
+  
+ <div class="flex">
+ 
+  <button class="back-btn">Go Back</button>
+ <button class="next-btn">Next Step</button></div>
+
+  <!-- Step 3 end -->
+</section>
+<section class="step-4">
+  <!-- Step 4 start -->
+
+  Finishing up
+  Double-check everything looks OK before confirming.
+
+  <!-- Dynamically add subscription and add-on selections here -->
+
+  Total (per month/year)
+<div class="flex"> <button class="back-btn">Go Back</button>
+ 
+ <button class="next-btn">Confirm</button>
+</div>
+ 
+
+  <!-- Step 4 end -->
+</section>
+<section class="step-5">
+  <!-- Step 5 start -->
+
+  Thank you!
+
+  Thanks for confirming your subscription! We hope you have fun 
+  using our platform. If you ever need support, please feel free 
+  to email us at support@loremgaming.com.
+
+  <!-- Step 5 end -->
+  </section>
+  </section>
+  </section>
+  <footer class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
+    Coded by <a href="#">Your Name Here</a>.
+  </footer>
+  </main>
+  <script>
+  let currentStep = 0;
+  
+  const steps = document.querySelectorAll(".container section");
+  const circles = document.querySelectorAll(".circle");
+  
+  // Show first step
+  showStep(currentStep);
+  
+  function showStep(step) {
+    steps.forEach((s, index) => {
+      s.classList.toggle("active", index === step);
+    });
+    
+    circles.forEach((c, index) => {
+      c.classList.toggle("active", index === step);
+    });
+  }
+  
+  // NEXT buttons
+  document.querySelectorAll(".next-btn").forEach(btn => {
+    btn.addEventListener("click", () => {
+      if (currentStep < steps.length - 1) {
+        currentStep++;
+        showStep(currentStep);
+      }
+    });
+  });
+  
+  // BACK buttons
+  document.querySelectorAll(".back-btn").forEach(btn => {
+    btn.addEventListener("click", () => {
+      if (currentStep > 0) {
+        currentStep--;
+        showStep(currentStep);
+      }
+    });
+  });
+</script>
+</body>
+</html>

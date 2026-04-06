@@ -1,0 +1,298 @@
+/**** *{
+  margin: 0;
+list-style: none;
+box-sizing: border-box;
+border: red 1px solid;
+padding: 0;
+}
+
+body{
+  margin: 20px;
+
+}
+main{
+ height: 100vh; 
+}
+
+.content{
+  display: flex;
+}
+
+aside{
+  padding: 20px;
+color: #FFFFFF;
+background-image:'assets/images/bg-sidebar-desktop.svg'; 
+height:50vh;
+}
+
+aside ul{
+  display: flex;
+
+flex-direction: column;
+
+gap: 20px;
+
+height: 40vh;
+}
+.container{
+  background-color: #FFFFFF;
+
+padding: 10px;
+
+padding: 20px;
+
+width: 80%;
+} 
+
+.container section{
+  padding: 10px;
+}
+.step-1 {
+  opacity: 1;
+}
+
+
+.step-2 {
+  opacity: 0;
+display: none;
+
+display: none;
+} 
+.step-3 {
+display: none;
+  opacity: 0;
+} 
+.step-4 {
+
+display: none;
+  opacity: 0;
+} 
+.step-4 {
+display: none;
+  opacity: 0;
+} 
+.step-5{
+
+display: none;
+  opacity: 0;
+} 
+.circle{
+ 
+font-weight:10px;
+width: 15px;
+
+height: 15px;
+border-radius: 50%;
+
+
+padding: 20px;
+
+align-items: center;
+
+justify-content: center;
+}
+
+.circle:hover  .circle:has(.active){
+  background-color: #3B83DB;
+}
+
+li{
+  display: flex;
+}
+label{
+  padding: 5px;
+} 
+
+section div input{
+  padding: 10px;
+
+margin: 5px;
+
+border: lightgrey 1px solid;
+}
+
+section p{
+  color:gray;
+}
+
+section h2{
+  color: darkblue;
+}
+
+section button{
+  padding: 10px;
+color: whitesmoke;
+margin: 20px;
+background-color:darkblue ;
+
+position: relative;
+
+top: 0;
+
+right: 0;
+border-radius: 5px;
+
+}
+circle-section{
+  
+position: absolute;
+
+}
+.circle-1, .circle-2, .circle-3{
+  padding: 20px;
+position: relative;
+
+top: 10px;
+
+
+background-color: greenyellow;
+}
+
+.circle-1{
+  top: 10px;
+
+border-radius: 50%;
+background-color: yellow;
+right: 25px;
+} .circle-2{
+padding: 3px 5px 10px 50px;
+  top: 20px;
+
+height: 20px;
+
+right: 10px;
+} .circle-3{
+
+
+  top: 20px;
+
+right: 4px;
+}
+.buttom{
+  display: flex;
+height: 100px;
+
+position: relative;
+justify-content: baseline;
+align-items: baseline;
+
+}
+.buttom{
+  background: #EAECFF;
+}
+***/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+body {
+  background: #eef5ff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* Layout */
+.content {
+  display: flex;
+  background: white;
+  width: 900px;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+/* Sidebar */
+aside {
+  width: 250px;
+  background: #483eff;
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+aside ul {
+  list-style: none;
+}
+
+aside li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.circle {
+  width: 30px;
+  height: 30px;
+  border: 1px solid white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 10px;
+}
+
+/* Active step */
+.circle.active {
+  background: #bfe2fd;
+  color: black;
+}
+
+/* Main container */
+.container {
+  flex: 1;
+  padding: 20px;
+}
+
+/* Hide all steps */
+.container section {
+  display: none;
+}
+
+/* Show active step */
+.container section.active {
+  display: block;
+}
+
+/* Inputs */
+input {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0 16px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+/* Buttons */
+.buttom {
+  display: flex;
+  justify-content: flex-end;
+}
+
+button {
+  padding: 10px 20px;
+  border: none;
+  background: #02295a;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+/* Back button */
+.back-btn {
+  background: transparent;
+  color: #02295a;
+  margin-right: auto;
+}
+.flex{
+  display: flex;
+
+flex-direction: row;
+}

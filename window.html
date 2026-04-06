@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+</head>
+<style type="text/css" media="all">
+  .options {
+display: flex;
+gap: 20px;
+position: relative;
+}
+
+.box {
+border: 2px solid #ccc;
+padding: 20px;
+cursor: pointer;
+border-radius: 10px;
+transition: 0.3s;
+}
+
+/* Hide default radio */
+.box input {
+display: none;
+}
+
+/* Hover effect */
+.box:hover {
+border-color: #007bff;
+}
+
+/* Selected state */
+.box input:checked + .content {
+border: 2px solid #007bff;
+background: #e6f0ff;
+}
+.box{
+position: absolute;
+top: 10px;
+right: 10px;
+
+}
+</style>
+<body>
+  <div class="options">
+  
+  <label class="box">
+    <input type="radio" name="plan" value="basic">
+    <div class="content">
+      <h3>Basic Plan</h3>
+      <p>$10/month</p>
+    </div>
+  </label>
+  
+  <label class="box">
+    <input type="radio" name="plan" value="pro">
+    <div class="content">
+      <h3>Pro Plan</h3>
+      <p>$20/month</p>
+    </div>
+  </label>
+  
+</div>
+</body>
+
+</html>

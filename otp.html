@@ -1,0 +1,123 @@
+<!----<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+</head>
+
+<body>
+<span id="DisplYOtp"></span>
+<div class="" id="otpDisplay">
+  
+</div>
+<button type="" id="generateBtn">generate otp</button>
+  <script src="otp.js"></script>
+</body>
+
+</html>---->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OTP Generator</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #4facfe, #00f2fe);
+    }
+
+    .container {
+      background: #fff;
+      padding: 30px;
+      border-radius: 12px;
+      text-align: center;
+      width: 300px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    }
+
+    h2 {
+      margin-bottom: 15px;
+      color: #333;
+    }
+
+    .otp-box {
+      font-size: 28px;
+      font-weight: bold;
+      letter-spacing: 5px;
+      margin: 20px 0;
+      padding: 15px;
+      border: 2px dashed #4facfe;
+      border-radius: 8px;
+      color: #333;
+      background: #f9f9f9;
+    }
+
+    button {
+      padding: 12px 20px;
+      border: none;
+      border-radius: 8px;
+      background: #4facfe;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background: #007bff;
+    }
+
+    .expired {
+      color: red;
+      font-size: 14px;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h2>OTP Generator</h2>
+
+    <div id="otpDisplay" class="otp-box">------</div>
+
+    <button id="generateBtn">Generate OTP</button>
+
+    <p id="status" class="expired"></p>
+  </div>
+
+  <script>
+    let generateOtp = () => {
+      const otp = Math.floor(100000 + Math.random() * 900000);
+
+      document.getElementById("otpDisplay").innerText = otp;
+      document.getElementById("status").innerText = "Valid for 15 seconds";
+
+      setTimeout(() => {
+        document.getElementById("otpDisplay").innerText = "Expired";
+        document.getElementById("status").innerText = "";
+      }, 15000);
+    };
+
+    document.getElementById("generateBtn").addEventListener('click', generateOtp);
+    window.addEventListener("load", generateOtp);
+  </script>
+
+</body>
+</html>

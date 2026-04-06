@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Multi-step form</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <link rel="stylesheet" href="mobile.css">
+  <style>
+    .attribution {margin: 70px; font-size: 0.6875rem; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body>
+<main>
+  <!-- Sidebar start -->
+<section class="content">
+  
+
+  <aside>
+    <ul>
+    <li>
+   <span class="circle">1</span></li>
+
+ <li> <span class="circle">2</span>
+</li>
+ <li> <span class="circle">3</span></li>
+
+  <li><span class="circle">4</span></li>
+
+    </ul>
+ 
+
+  </aside>
+  <!-- Sidebar end -->
+  
+  <form action="https://google.com" method="get" accept-charset="utf-8">
+    
+  
+  <section class="container">
+    
+
+<section class="step-1">
+  <!-- Step 1 start -->
+
+  <h1>Personal info
+  
+</h1><p>Please provide your name, email address, and phone number.</p>
+
+<div>  <label for="Name">Name</label>
+  
+  <input type="text" name="" placeholder=" e.g. Stephen King"id=""></div>
+<div>  <label for="Email Address">Email Address</label>
+  
+  <input type="email" name="" placeholder="e.g. stephenking@lorem.com" id=""></div>
+<div><label for="number">number</label>
+  <input type="phone" name="" id="" value="" placeholder="e.g. +1 234 567 890" />
+  </div>
+<div class="buttom"><button type="button">Next Step</button></div>
+
+  <!-- Step 1 end -->
+</section>
+<section class="step-2">
+  <!-- Step 2 start -->
+
+  <h2>Select your plan</h2>
+  <p>You have the option of monthly or yearly billing.</p>
+  <div>
+  <div class="form-input"><label> <img src="assets/images/icon-arcade.svg" alt="" /><input type="radio" name="plan" id="arcade"> 
+ Arcade
+    $9/mo</label>
+  </div>
+
+<div class="form-input">
+<label>
+
+  
+<img src="assets/images/icon-advanced.svg" alt="" /><input type="radio" name="plan" id="advanced">Advance $12/mo</label>
+
+</div>
+<div class="form-input"><label><img src="assets/images/icon-pro.svg" alt="" /><input type="radio" name="plan" id="pro" value="" />pro <h4>$15/mo</h4></label>
+
+</div>
+
+  </div>
+
+<div class="flex"> <span>Monthly</span>
+
+<input type="checkbox" name="range" id="range">
+<span>Monthly</span>
+  
+</div>
+  
+
+<div class="flex buttom">
+  <button type="button">Go Back</button>
+  <button type="button">Next Step</button>
+</div>
+  
+  
+
+  <!-- Step 2 end -->
+</section>
+<section class="step-3">
+  <!-- Step 3 start -->
+
+  <h2>Pick add-ons</h2>
+  <p>Add-ons help enhance your gaming experience.
+</p><div class="form">
+<div>
+  <label for="online-service">Online service
+  </label>
+  <input type="checkbox" name="" id="online-service"></div>
+  <div>
+  <label for="larger">Larger storage
+    Extra 1TB of cloud save
+    +$2/mo</label>
+  <input type="checkbox" name="" id="larger">
+  </div>
+  <div>
+  <label for="customizable">Customizable Profile
+    Custom theme on your profile
+    +$2/mo</label>
+  <input type="checkbox" name="" id="customizable"></div>
+</div>
+
+  
+<div class="flex buttom">
+<button type="button">Go Back</button>
+<button type="button">Next Step</button>
+</div>
+  
+  
+
+  <!-- Step 3 end -->
+</section>
+<section class="step-4">
+  <!-- Step 4 start -->
+
+  <h2>Finishing up</h2>
+  <p>Double-check everything looks OK before confirming.</p>
+
+  <!-- Dynamically add subscription and add-on selections her"e -->
+
+  <div>Total (per month/year)</div>
+<div class="flex buttom"><button type="button">Go Back</button>
+<button type="submit">confirm</button>
+</div>
+  
+  
+
+  <!-- Step 4 end -->
+</section>
+<section class="step-5">
+  <!-- Step 5 start -->
+<div class="card">
+  <img src="/assets/images/icon-thank-you.svg" alt="" />
+
+  <h3>Thank you!</h3>
+
+  <p>Thanks for confirming your subscription! We hope you have fun 
+  using our platform. If you ever need support, please feel free 
+  to email us at support@loremgaming.com.
+</p>
+
+</div>
+  <!-- Step 5 end -->
+  </section>
+  </section>
+  </section>
+  </form>
+  <footer class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
+    Coded by <a href="#">Your Name Here</a>.
+  </footer>
+  </main>
+  <script>
+  console.log(1+"2"+3)
+  document.addEventListener("DOMContentLoaded", () => {
+    const steps = document.querySelectorAll(
+      ".step-1, .step-2, .step-3, .step-4, .step-5"
+    );
+    
+    const circles = document.querySelectorAll(".circle");
+    
+    let currentStep = 0;
+    
+    function showStep(index) {
+      steps.forEach((step, i) => {
+        step.style.display = i === index ? "block" : "none";
+      });
+      
+      // Update sidebar active state
+      circles.forEach((circle, i) => {
+        circle.classList.toggle("active", i === index);
+      });
+    }
+    
+    // Initialize
+    showStep(currentStep);
+    
+    // Buttons
+    const nextButtons = document.querySelectorAll("button");
+    
+    nextButtons.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const text = btn.textContent.toLowerCase();
+        
+        if (text.includes("next")) {
+          if (currentStep === 0 && !validateStep1()) return;
+          
+          currentStep++;
+          showStep(currentStep);
+        }
+        
+        if (text.includes("back")) {
+          currentStep--;
+          showStep(currentStep);
+        }
+        
+        if (text.includes("confirm")) {
+          currentStep++;
+          showStep(currentStep);
+        }
+      });
+    });
+    
+    // Validation for Step 1
+    function validateStep1() {
+      const inputs = steps[0].querySelectorAll("input");
+      let valid = true;
+      
+      inputs.forEach((input) => {
+        if (input.value.trim() === "") {
+          input.style.border = "2px solid red";
+          valid = false;
+        } else {
+          input.style.border = "";
+        }
+      });
+      
+      return valid;
+    }
+  });
+</script>
+</body>
+</html>
