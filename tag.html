@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tag Input</title>
+
+<style>
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: "poppins", Arial, Helvetica, sans-serif;
+    background: #1f2023;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    height: 100vh;
+}
+
+ul{
+    padding-inline-start: 0px;
+}
+li{
+    list-style: none;
+}
+
+.tag-area{
+    padding: 1rem;
+    border: 2px solid #605f6f;
+    border-radius: 5px;
+    transition: all 0.2s;
+    cursor: text;
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 400px;
+}
+
+.label{
+    position: absolute;
+    background: #1f2023;
+    padding: 0 0.3rem;
+    color: #adadad;
+    top: 22px;
+    transition: all 0.1s;
+}
+
+.label-active{
+    top: -11px;
+    color: #8d29ff;
+    font-size: 13px;
+}
+
+.tag-area ul{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.active{
+    border: 2px solid #8d29ff !important;
+    background: #353535;
+    border-radius: 100px;
+    display: flex;
+    align-items: center;
+    margin: 0.5rem;
+    padding: 0 5px;
+}
+
+.tag-input{
+    padding: 0.5rem;
+    outline: none;
+    border: none;
+    width:150px;
+    margin-left: 0.5rem;
+    background:transparent;
+    font-size: 18px;
+    color: #fff;
+}
+
+.cross{
+    cursor: pointer;
+    display: flex;
+    margin-left: 0.5rem;
+    justify-content: center;
+    align-items:center;
+    padding: 0.8rem;
+    transform: rotate(45deg);
+    background: #414141;
+    position: relative;
+}
+
+.cross:hover{
+    background: #818181b1;
+}
+
+.cross::before{
+    content: "";
+    width:2px;
+    height: 16px;
+    position: absolute;
+    background: #fff;
+}
+
+.cross::after{
+    content: "";
+    width:16px;
+    height: 2px;
+    position: absolute;
+    background: #fff;
+}
+
+@media(max-width:650px){
+    .tag-area{
+        width: 300px;
+    }
+}
+</style>
+</head>
+
+<body>
+<form action="" method="get" accept-charset="utf-8">
+  
+
+
+<div class="tag-area" id="tagArea">
+    <label class="label" id="label">Enter Tags</label>
+    <ul id="tagList">
+        <input type="text" class="tag-input" id="tagInput">
+    </ul>
+</div>
+<button type="submit">submit</button>
+</form>
+<script>
+const tagArea = document.getElementById("tagArea");
+const input = document.getElementById("tagInput");
+const tagList = document.getElementById("tagList");
+const label = document.getElementById("label");
+
+// Focus effect
+tagArea.addEventListener("click", () => {
+    input.focus();
+    tagArea.style.borderColor = "#8d29ff";
+    label.classList.add("label-active");
+});
+
+// Remove focus style
+input.addEventListener("blur", () => {
+    tagArea.style.borderColor = "#605f6f";
+    if(input.value === "" && tagList.children.length === 1){
+        label.classList.remove("label-active");
+    }
+});
+
+// Create tag
+input.addEventListener("keydown", function(e){
+    if(e.key === "Enter" && input.value.trim() !== ""){
+        e.preventDefault();
+
+        createTag(input.value.trim());
+        input.value = "";
+    }
+});
+
+// Function to create tag
+function createTag(text){
+    const li = document.createElement("li");
+    li.className = "active";
+
+    const span = document.createElement("span");
+    span.innerText = text;
+
+    const remove = document.createElement("div");
+    remove.className = "cross";
+
+    remove.addEventListener("click", () => {
+        li.remove();
+    });
+
+    li.appendChild(span);
+    li.appendChild(remove);
+
+    tagList.insertBefore(li, input);
+    
+}
+
+</script>
+
+</body>
+</html>

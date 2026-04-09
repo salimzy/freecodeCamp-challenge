@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+  <style type="text/css" media="all">
+    *{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    }
+   body {
+   scroll-behavior: smooth;
+   }
+   nav{
+     display:flex;
+     align-items: center;
+     justify-content: center;
+     margin-top: 10px;
+     margin-bottom: 5px;
+    
+   }
+    nav ul{display: flex; flex-direction: row;list-style: none;gap: 20px; padding: 10px; justify-content: center; align-items: center;box-shadow: 0 2px 5px gray;border-radius: 10px;}
+    nav ul li{
+    padding: 5px;
+   border-radius: 5px;
+   
+    }
+    nav ul li:hover{
+    background-color: slategray;
+    }
+    section{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 2px 5px gray;
+    /*border-top:1px solid gray;*/
+    }
+    section h1{
+    color: lawngreen;
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <!--Tab to edit-->
+    <nav>
+      <ul>
+        <li><a href="#home">home</a></li>
+        <li><a href="#service">service</a></li>
+        <li><a href="#about">about
+ </a></li>
+        <li><a href="#blog">blog</a></li>
+        <li><a href="#contact">contact</a></li>
+      </ul>
+    </nav>
+    <section id="home">
+      <h1>home</h1>
+    </section>
+        <section id="service">
+      <h1>service</h1>
+    </section>
+        <section id="about">
+      <h1>about</h1>
+    </section>
+        <section id="blog">
+     <h1>blog</h1>
+    </section>
+        <section id="contact">
+     <h1>contact</h1>
+    </section>
+  </main>
+  <script>
+let name = "";
+function profile(name="guest"){
+let profile = [name];
+//profile.add("name",name)
+
+return {
+profile,
+
+}
+}
+console.log(profile());
+    
+  </script>
+</body>
+
+</html>

@@ -105,3 +105,4 @@ document.addEventListener("DOMContentLoaded", () => {
       "Total: $" + total + "/" + (billing === "monthly" ? "mo" : "yr");
   }
 });
+

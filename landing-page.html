@@ -1,0 +1,162 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Codekinda</title>
+  
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+    
+    :root {
+      --text: #ffffff;
+      --bg: #0f0120;
+      --purple: #a855f7;
+      --card: #1a0833;
+    }
+    
+    body {
+      background: var(--bg);
+      color: var(--text);
+    }
+    
+    /* HEADER */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 20px;
+    }
+    
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: var(--purple);
+    }
+    
+    nav {
+      display: flex;
+      gap: 20px;
+    }
+    
+    nav a {
+      text-decoration: none;
+      color: var(--text);
+      transition: 0.3s;
+    }
+    
+    nav a:hover {
+      color: var(--purple);
+    }
+    
+    /* HAMBURGER */
+    .menu-toggle {
+      display: none;
+      font-size: 1.8rem;
+      cursor: pointer;
+    }
+    
+    /* HERO SECTION */
+    section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 60px 20px;
+      gap: 20px;
+    }
+    
+    h2 {
+      font-size: 2rem;
+      color: var(--purple);
+    }
+    
+    p {
+      max-width: 500px;
+      line-height: 1.6;
+      opacity: 0.8;
+    }
+    
+    .btn {
+      padding: 12px 20px;
+      background: var(--purple);
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    
+    .btn:hover {
+      background: #9333ea;
+      transform: scale(1.05);
+    }
+    
+    /* MOBILE STYLES */
+    @media (max-width: 768px) {
+      nav {
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background: var(--card);
+        flex-direction: column;
+        width: 200px;
+        padding: 20px;
+        display: none;
+        border-radius: 10px 0 0 10px;
+      }
+      
+      nav.active {
+        display: flex;
+      }
+      
+      .menu-toggle {
+        display: block;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  
+  <header>
+    <div class="logo">codekinda</div>
+    
+    <nav id="nav">
+      <a href="#">About</a>
+      <a href="#">Contact</a>
+    </nav>
+    
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+  </header>
+  
+  <section>
+    <h2>Design that feels as it looks</h2>
+    <p>
+      We craft modern, intuitive, and visually stunning user experiences
+      for brands that want to stand out.
+    </p>
+    <div class="btn">Start a Project</div>
+  </section>
+  
+  <script>
+    function toggleMenu() {
+      document.getElementById("nav").classList.toggle("active");
+      
+    }
+    
+    function getName () {
+return { name:"Maxwell"
+};
+}
+console.log(getName().name);
+  </script>
+  
+</body>
+
+</html>
