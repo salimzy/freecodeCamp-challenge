@@ -13,6 +13,74 @@
     background: url("design/active-states-step-2.jpg");
     mix-blend-mode: screen;
     }
+    .border{
+    background: lightsalmon;
+    padding: 20px;
+    height: 100px;
+    width:100;
+    margin: 30px;
+    border-radius:
+50% 10% 50% 10% /
+10% 50% 10% 50%
+    }    .border-1{
+    background: lightsalmon;
+    padding: 20px;
+    height: 100px;
+    width:100;
+    margin: 30px;
+    border-radius:
+10% 50% 10% 50% /
+50% 10% 50% 10%;
+}
+.animation{
+animation: fadeIn 2s infinite;
+
+}
+@keyframes pulse{
+0%100%{transform:scale(1)}
+50%{transform: scale(1.2);}
+
+}
+@keyframes rotate{
+0%{
+transform: rotate(0deg);
+}
+100%{
+transform: rotate(360deg);
+}
+}
+
+@keyframes slideIn{
+0%{
+transform:translateX(-50%);}
+50%{transform: translateX(0%);}
+100%{transform: translateX(5%);}
+}
+
+@keyframes fadeIn{
+0%{
+opacity: 0;
+} 50%{
+opacity: 5;}
+100%{
+opacity: 0;
+}
+}
+
+@keyframes bounce{
+0%{
+transform: translateY(3px);
+}
+40%{ 
+transform: translateY();}
+60%{
+transform:translateY(); ;
+}
+}
+.border-1:hover{
+/*transform: skew(-10deg, -10deg) ;*/
+transform: scale (0.8);
+}
   </style>
 </head>
 
@@ -20,6 +88,9 @@
   <section>
     
   </section>
+  <div class="border animation"></div>
+  <p></p>
+  <div class="border-1"></div>
 </body>
 
 </html>
