@@ -1,155 +1,195 @@
 <!DOCTYPE html>
 <html>
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title></title>
-  
-  <style type="text/css" media="all">
-.order-btn{
-position: absolute;
-top: 30%;
-left: 50%;
-transform: translateX(-50%);
-padding: 12px 28px;
-gap: 8px;
-font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-font-size: 16px;
-font-weight: 600;
-letter-spacing: 0.5px;
-cursor: pointer;
-visibility: hidden;
-transition: all 0.3s ease;
-z-index: 1000;
-}
-.success-card{
-background: #fff;
-padding: 40px;
-border-radius: 12px;
-box-shadow: 0 10px 25px -5px rgba(0,0,0,0.1),0 8px 10px -6px rgba(0,0,0,1);
-text-align: center;
-max-width: 400px;
-transform: translateY(20px) scale(0.95);
-transition: all 0,4s cubic-bezier(0.175,885,0.32,1.275);
-}
-.success-overlay.is-active{
-opacity: 1;
-visibility: visible;
-}
-.success-overlay.is-active .success-card{
-transform: translateY(0) scale(1);
-}
+  <title>Success Modal</title>
 
-.checkmark-svg{
-width: 64px;
-height: 64px;
-border-radius: 50%;
-display: block;
-stroke-width: 3;
-stroke: #10b981;
-stroke-miterlimit: 10;
-margin: 0 auto 20px auto;
-box-shadow: inset 0px 0px 0px #10b981;
-}
-.checkmark-circle{
-stroke-dasharray:166 ;
-stroke-dashoffset: 166;
-stroke-miterlimit: 10;
-stroke: #10b981;
-fill:none;
-}
-.checkmark-check{
-transform-origin:50% 50%;
-stroke-dasharray: 48;
-stroke-dashoffset: 48;
-}
-.success-overlay.is-active.checkmark-circle{ animation: stroke 0.6s cubic-bezier(0.65,0,0.45,1) forwards;}
-.success-overlay.is-active.checkmark-svg{
-animation: fill 0.4s ease-in-out 0.5s forwards,scale 0.3s ease-in-out 0.9s both;
-}
- .success-overlay.is-active.checkmark-check{
- animation: stroke 0.3s cubic-bezier(0.65,0,0.5,1) 0.6s forwards;
- }
- 
- .success-text{
- opacity: 0;
- transform: translateY(10px);
- }
-    .success-overlay.is-active .success-text{
-    animation: fadeUp 0.5s ease forwards 0.8s ;
+  <style>
+    body{
+      font-family: sans-serif;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      height:100vh;
+      background:#f1f5f9;
     }
-    
-    .success-text h3{
-    margin: 0 0 8px 0;
-    color: #0f1772;
-    font-family: sans-serif;
-    font-size: 24px;
+
+    /* Trigger button */
+    .order-btn{
+      padding:12px 28px;
+      font-size:16px;
+      font-weight:600;
+      cursor:pointer;
+      background:#0f172a;
+      color:#fff;
+      border:none;
+      border-radius:6px;
     }
+
+    /* Overlay */
+    .success-overlay{
+      position:fixed;
+      top:0;
+      left:0;
+      width:100%;
+      height:100%;
+      background:rgba(0,0,0,0.5);
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      opacity:0;
+      visibility:hidden;
+      transition:0.3s ease;
+    }
+
+    .success-overlay.is-active{
+      opacity:1;
+      visibility:visible;
+    }
+
+    /* Card */
+    .success-card{
+      background:#fff;
+      padding:40px;
+      border-radius:12px;
+      text-align:center;
+      max-width:400px;
+      transform:translateY(20px) scale(0.95);
+      transition: all 0.4s cubic-bezier(0.175,0.885,0.32,1.275);
+    }
+
+    .success-overlay.is-active .success-card{
+      transform:translateY(0) scale(1);
+    }
+
+    /* SVG */
+    .checkmark-svg{
+      width:64px;
+      height:64px;
+      display:block;
+      margin:0 auto 20px;
+      stroke:#10b981;
+      stroke-width:3;
+      fill:none;
+    }
+
+    .checkmark-circle{
+      stroke-dasharray:166;
+      stroke-dashoffset:166;
+    }
+
+    .checkmark-check{
+      stroke-dasharray:48;
+      stroke-dashoffset:48;
+    }
+
+    /* Animate when active */
+    .success-overlay.is-active .checkmark-circle{
+      animation:stroke 0.6s forwards;
+    }
+
+    .success-overlay.is-active .checkmark-check{
+      animation:stroke 0.4s 0.6s forwards;
+    }
+
+    /* Text */
     .success-text{
-    margin: 0 0 24px 0;
-    color: #64748b;
-    font-family: sans-serif;
-    line-height: 1.5;
+      opacity:0;
+      transform:translateY(10px);
     }
-    
+
+    .success-overlay.is-active .success-text{
+      animation:fadeUp 0.5s forwards 0.8s;
+    }
+
+    .success-text h3{
+      margin-bottom:8px;
+      color:#0f172a;
+    }
+
+    .success-text p{
+      color:#64748b;
+      margin-bottom:20px;
+    }
+
+    /* Close button */
     .close-btn{
-    background-color: #0f172a;
-    color: white;
-    border: none;
-    padding: 10px 24px;
-    border-radius: 6px;
-    font-weight: 600px;
-    cursor: pointer;
-    opacity: 0;
-    transistion:background 0.2s ;
+      background:#0f172a;
+      color:white;
+      border:none;
+      padding:10px 24px;
+      border-radius:6px;
+      cursor:pointer;
+      opacity:0;
+      transition:background 0.2s;
     }
+
     .success-overlay.is-active .close-btn{
-    animation: fadeUp 0.5s ease forwards 1s;
+      animation:fadeUp 0.5s forwards 1s;
     }
+
     .close-btn:hover{
-    background-color: #334155;
+      background:#334155;
     }
+
+    /* Animations */
     @keyframes stroke{
-    100%{
-    stroke-dashoffset: 0;
+      to{ stroke-dashoffset:0; }
     }
-    }
-    @keyframes scale{
-    0%,100%{
-    transform: none;
-    }
-    50%{
-    transform: scale3d(1.1,1.1,1);
-    }
-    }
-    @keyframes fill{
-    100%{
-    box-shadow: inset 0px 0px 0px 30px rgba(16,185,129,0.1);
-    }
-    }
+
     @keyframes fadeUp{
-   to{
-   opacity: 1;
-   transform: translateY(0);
-   }
+      to{
+        opacity:1;
+        transform:translateY(0);
+      }
     }
   </style>
 </head>
 
 <body>
-  <script type="text/javascript" charset="utf-8">
-    const triggerBtn =document.getElementById("triggerBtn");
-    const modal =document.getElementById("successModal");
-    const closeBtn = document.getElementById("closeBtn");
-    triggerBtn.addEventListener("click",()=>{
-    modal.classList.add('is-active');
-    });
-    closeBtn.addEventListener('click',()=>{
-    modal.classList.remove('is-active');
-    });
-    
-  </script>
-</body>
 
+  <!-- Trigger Button -->
+  <button id="triggerBtn" class="order-btn">Place Order</button>
+
+  <!-- Modal -->
+  <div id="successModal" class="success-overlay">
+    <div class="success-card">
+
+      <!-- SVG Check -->
+      <svg class="checkmark-svg" viewBox="0 0 52 52">
+        <circle class="checkmark-circle" cx="26" cy="26" r="25"/>
+        <path class="checkmark-check" d="M14 27l7 7 16-16"/>
+      </svg>
+
+      <!-- Text -->
+      <div class="success-text">
+        <h3>Success!</h3>
+        <p>Your order has been placed successfully.</p>
+      </div>
+
+      <!-- Close -->
+      <button id="closeBtn" class="close-btn">Close</button>
+
+    </div>
+  </div>
+
+  <!-- JS (fixed) -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const triggerBtn = document.getElementById("triggerBtn");
+      const modal = document.getElementById("successModal");
+      const closeBtn = document.getElementById("closeBtn");
+
+      triggerBtn.addEventListener("click", () => {
+        modal.classList.add("is-active");
+      });
+
+      closeBtn.addEventListener("click", () => {
+        modal.classList.remove("is-active");
+      });
+    });
+  </script>
+
+</body>
 </html>
