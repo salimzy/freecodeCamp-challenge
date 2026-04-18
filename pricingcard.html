@@ -89,19 +89,26 @@ padding: 20px;
       <!--Tab to edit-->
     </li>
   </ul>
-  <button class="btn" type="submit">Get started</button>
+  <button class="btn" id="btn" type="submit">Get started</button>
   
   </div>
   </div>
   
   <script>
     <!--Tab to edit-->
-    
+    let btn=document.getElementById("btn");
+    btn.addEventListener("click",()=>{
+confirm("you will be redirected to new page",);window.location.href = "/dashboard"; 
+  console.log(window.location);
+  //(()=>{
+//to:"https://google.com"
+//});
+    });
     function greet(name='guest',msg=`hello ${name}`) {
 return msg;
 // Tab to edit
 }
-console.log(greet("john"));
+
   </script>
 </body>
 

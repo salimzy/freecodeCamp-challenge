@@ -9,3 +9,9 @@ function sumDigits(num) {
   }return sum;
 }
 console.log(sumDigits(400))
+
+let age =20;
+let dept='xyz';
+setInterval(()=>{
+  console.log(age,dept)
+},1000)

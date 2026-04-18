@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<section>
+<input type="checkbox" name="dark" id="dark">
+  <h2>be a <span> life changer</span></h2>
+  <p>someone out there needs help today your donation can bring hope, support and a real chance at a better life </p>
+  <span class="progress"></span>
+  <p>120,000 raised of 200000 goal</p>
+  <p>we need a donation of: <span id="doneate-amount">5000</span>
+</p>
+  <button type="submit">Donate now</button>
+  <p>secure donation 100% transparent</p>
+  </section>
+  <script>
+  const dark =document.getElementById("dark");
+  const body =document.getElementsByName("body");
+  dark.addEventListener("click",()=>{
+  if(dark.checked){
+  //='black';
+
+console.log("body");
+}else{
+body.style.backgroundColor='white';
+console.log('ok')
+}
+  });
+  
+   
+  </script>
+</body>
+
+</html>

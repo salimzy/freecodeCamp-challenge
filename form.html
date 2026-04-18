@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>register Account</title>
+  <style>
+  *{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  }
+  body{
+  padding: 30px;
+  }
+  form{
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  gap: 10px;
+  flex-direction: column;
+  
+  }form input{
+  padding: 20px;
+  width: 300px;
+  }
+  form button{
+  padding: 10px;
+  height: 40px;
+  width: 150px;
+  }
+  
+  .loggedin-container{
+  background: #ccc;
+  width: 100vw;
+  height: 100vh;
+  
+  z-index: 1000;
+  }
+  .btn{
+  padding: 10px;
+  background: red;
+  width:100px;
+  margin: 50px;
+  
+  }
+  </style>
+</head>
+
+<body>
+<div class="login"></div>
+  <form action="" method="post" id="register">
+  <span id="error"></span>
+  <label for="name">name</label>
+  <input type="text" name="name" id="name">
+
+  <label for="email">email</label>
+  <input type="text" name="email" id="email">
+  <label for="password">password</label>
+  <input type="password" name="password" id="password">
+  <button type="submit">register</button>
+  </form>
+  
+  <div id="data"></div>
+  <script src="form.js">
+  
+  </script>
+</body>
+
+</html>
